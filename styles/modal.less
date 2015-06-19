@@ -3,14 +3,29 @@
 @modal-width: @ui-size * 50;
 
 atom-panel.modal {
-  width: @ui-size * 50;
-  margin-left: @modal-width/-2;
-  color: @text-color;
-  background-color: transparent;
-  padding: @ui-padding/2;
 
-  atom-text-editor[mini] {
-    margin-bottom: @ui-padding/2;
+  width: @modal-width;
+  margin-left: @modal-width/-2;
+  background-color: transparent;
+  padding: 0;
+
+  .select-list {
+    position: relative;
+    z-index: 999999;
+    width: @modal-width;
+    margin-left: auto;
+    margin-right: auto;
+    color: @text-color;
+    background-color: transparent;
+    padding: @component-padding;
+    background-color: @overlay-background-color;
+    border-top: 1px solid hsla(0,0%,0%,.2);
+    border-radius: 0 0 @component-border-radius*2 @component-border-radius*2;
+    box-shadow: 0 6px 12px -2px hsla(0,0%,0%,.4);
+
+    atom-text-editor[mini] {
+      margin-bottom: @ui-padding/2;
+    }
   }
 
   .select-list ol.list-group,
@@ -58,25 +73,7 @@ atom-panel.modal {
     display: block;
   }
 
-  & > * {
-    position: relative; // fixes stacking order
-  }
 
-
-  // Container
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    background-color: @overlay-background-color;
-    border-top: 1px solid hsla(0,0%,0%,.2);
-    border-radius: 0 0 @component-border-radius*2 @component-border-radius*2;
-    box-shadow: 0 6px 12px -2px hsla(0,0%,0%,.4);
-  }
 
   // Backdrop
   // TODO: Add extra wrapper to translate individually or easier positioning
@@ -88,7 +85,6 @@ atom-panel.modal {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
     background: @overlay-backdrop-color;
     -webkit-animation: overlay-fade .1s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
