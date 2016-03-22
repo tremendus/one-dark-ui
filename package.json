@@ -1,15 +1,15 @@
 {
-  "name": "one-dark-ui",
+  "name": "tremendus-one-dark-ui",
   "theme": "ui",
   "version": "1.1.9",
-  "description": "Atom One dark UI theme",
+  "description": "Atom One dark UI theme - Tremendus",
   "keywords": [
     "dark",
     "adaptive",
     "ui"
   ],
   "license": "MIT",
-  "repository": "https://github.com/atom/one-dark-ui",
+  "repository": "https://github.com/tremendus/one-dark-ui",
   "main": "lib/main",
   "engines": {
     "atom": ">0.40.0"
