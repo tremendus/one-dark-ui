@@ -34,10 +34,10 @@
 
 // Main colors -----------------
 @ui-fg:     hsl(@ui-hue, min(@ui-saturation, 18%), max(@ui-lightness*3, 66%) );
-@ui-bg:     hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
+// @ui-bg:     hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
 @ui-border: hsl(@ui-hue, @ui-saturation, @ui-lightness-border);
 
-
+@ui-bg: @syntax-background-color;
 
 
 
@@ -154,13 +154,17 @@
 
 
 // Background (Custom) -----------------
-@level-1-color: lighten(@base-background-color, 6%);
-@level-2-color: @base-background-color;
-@level-3-color: darken(@base-background-color, 3%);
+// @level-1-color: lighten(@base-background-color, 6%);
+// @level-2-color: @base-background-color;
+// @level-3-color: darken(@base-background-color, 3%);
 
+@level-1-color: @base-background-color;
+@level-2-color: @base-background-color;
+@level-3-color: @base-background-color;
 
 // Base -----------------
-@base-accent-color: hsl(@ui-hue, 100%, 66%);
+// @base-accent-color: hsl(@ui-hue, 100%, 66%);
+@base-accent-color: @syntax-cursor-color;
 
 
 // Components (Custom) -----------------

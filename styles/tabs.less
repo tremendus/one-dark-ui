@@ -156,7 +156,7 @@
   // Modified ----------------------
   .tab.modified {
     .close-icon {
-      color: @text-color-info;
+      color: @syntax-result-marker-color;
       border: none;
       border-bottom: @tab-border-size solid transparent;
     }
@@ -173,6 +173,9 @@
         content: "\f052";
         display: inline-block;
       }
+    }
+    &:hover .close-icon {
+      color: @syntax-result-marker-color;
     }
   }
 
@@ -255,6 +258,19 @@ atom-pane.active .tab.active:before {
     }
     .title {
       background-color: @tab-background-color-editor;
+    }
+  }
+}
+
+
+// Clear colors --------------
+.tab {
+  .title::before {
+    color: darken(@syntax-text-color, 40%);
+  }
+  &.active {
+    .title::before {
+      color: @syntax-result-marker-color;
     }
   }
 }
