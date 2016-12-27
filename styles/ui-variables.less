@@ -106,7 +106,7 @@
 @tab-background-color-active:      @level-2-color;
 @tab-border-color:                 @base-border-color;
 
-@tree-view-background-color:       @level-3-color;
+@tree-view-background-color:       @level-1-color;
 @tree-view-border-color:           @base-border-color;
 
 // @ui-site-color-1: hsl(208, 100%, 50%); // blue
@@ -119,12 +119,12 @@
 @ui-site-color-2: @syntax-color-added;
 @ui-site-color-3: @syntax-color-modified;
 @ui-site-color-4: @syntax-color-removed;
-@ui-site-color-5: @syntax-color-modified;
+@ui-site-color-5: @syntax-cursor-color;
 
 
 // Sizes -----------------
 @font-size:               12px;
-@input-font-size:         14px;
+@input-font-size:         12px;
 @disclosure-arrow-size:   12px;
 
 @component-padding:       10px;
@@ -160,13 +160,18 @@
 
 
 // Background (Custom) -----------------
-// @level-1-color: lighten(@base-background-color, 6%);
+// @level-1-color: lighten(@base-background-color, 3%);
 // @level-2-color: @base-background-color;
 // @level-3-color: darken(@base-background-color, 3%);
 
-@level-1-color: @base-background-color;
+// @level-1-color: @base-background-color;
+// @level-2-color: @base-background-color;
+// @level-3-color: @base-background-color;
+
+@level-1-color: lighten(@base-background-color, 3%);
 @level-2-color: @base-background-color;
-@level-3-color: @base-background-color;
+@level-3-color: darken(@base-background-color, 3%);
+
 
 // Base -----------------
 // @base-accent-color: hsl(@ui-hue, 100%, 66%);
@@ -216,7 +221,7 @@
 @ui-padding:              @ui-size*1.5;
 @ui-padding-pane:         @ui-size*.5;
 @ui-padding-icon:         @ui-padding/3.3;
-@ui-line-height:          @ui-size*2;
+@ui-line-height:          @ui-size*2.1;
 @ui-tab-height:           @ui-padding*2;
 
 

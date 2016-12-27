@@ -1,11 +1,11 @@
-@tree-view-height: @ui-line-height*1.1;
+@tree-view-height: @ui-line-height*1;
 
-// .tree-view * {
-//   font-size: @ui-size;
-// }
+.tree-view * {
+  font-size: @ui-size*0.995;
+}
 
 .tree-view {
-  font-size: @ui-size;
+  // font-size: @ui-size;
   background: @tree-view-background-color;
 
   .project-root.project-root {
@@ -57,13 +57,16 @@
   display: inline-block;
   height: inherit;
   &::before {
-    color: darken(@syntax-text-color, 40%);
+    color: darken(@syntax-text-color, 30%);
     top: initial;
     line-height: inherit;
     height: inherit;
     vertical-align: top;
   }
-  color: darken(@syntax-text-color, 40%);
+  color: darken(@syntax-text-color, 35%);
+  &.icon-file-directory {
+    color: darken(@syntax-text-color, 10%);
+  }
 }
 
 // Active tree-view marker --------------
@@ -93,13 +96,19 @@
     color: @syntax-text-color;
   }
   .icon::before {
-    color: @syntax-result-marker-color;
+    color: @ui-site-color-5;
   }
 }
 
-// expanded folder
-.expanded.directory > .list-item {
+// Expanded folder
+.directory > .list-item {
   .icon.icon-file-directory::before {
-    color: @syntax-result-marker-color;
+    color: @ui-site-color-5;
+  }
+}
+
+.header > .list-item {
+  .icon.icon-file-directory {
+    color: @syntax-text-color;
   }
 }
