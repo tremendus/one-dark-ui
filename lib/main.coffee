@@ -1,46 +1,29 @@
-
-# Theme settings
-# -----------------------
-
 root = document.documentElement
 
 module.exports =
-  config:
-    fontSize:
-      title: 'Font Size'
-      description: 'Change the UI font size. Needs to be between 8 and 20.'
-      type: ['integer', 'string']
-      minimum: 8
-      maximum: 20
-      default: 'Auto'
-    layoutMode:
-      title: 'Layout Mode'
-      description: 'In Auto mode, the UI will automatically adapt based on the window size.'
-      type: 'string'
-      default: 'Auto'
-      enum: [
-        'Compact'
-        'Auto'
-        'Spacious'
-      ]
-
   activate: (state) ->
-    # Handle settings changes
-    atom.config.onDidChange 'one-dark-ui.fontSize', ->
-      setFontSize(atom.config.get('one-dark-ui.fontSize'))
-    atom.config.onDidChange 'one-dark-ui.layoutMode', ->
-      setLayoutMode(atom.config.get('one-dark-ui.layoutMode'))
+    atom.config.observe 'one-dark-ui.fontSize', (value) ->
+      setFontSize(value)
 
-    # Initialize
-    setFontSize(atom.config.get('one-dark-ui.fontSize'))
-    setLayoutMode(atom.config.get('one-dark-ui.layoutMode'))
+    atom.config.observe 'one-dark-ui.tabSizing', (value) ->
+      setTabSizing(value)
+
+    atom.config.observe 'one-dark-ui.hideDockButtons', (value) ->
+      setHideDockButtons(value)
+
+    # DEPRECATED: This can be removed at some point (added in Atom 1.17/1.18ish)
+    # It removes `layoutMode`
+    if atom.config.get('one-dark-ui.layoutMode')
+      atom.config.unset('one-dark-ui.layoutMode')
 
   deactivate: ->
     unsetFontSize()
-    unsetLayoutMode()
+    unsetTabSizing()
+    unsetHideDockButtons()
 
 
 # Font Size -----------------------
+
 setFontSize = (currentFontSize) ->
   if Number.isInteger(currentFontSize)
     root.style.fontSize = "#{currentFontSize}px"
@@ -51,9 +34,22 @@ unsetFontSize = ->
   root.style.fontSize = ''
 
 
-# Layout Mode -----------------------
-setLayoutMode = (layoutMode) ->
-  root.setAttribute('theme-one-dark-ui-layoutmode', layoutMode.toLowerCase())
+# Tab Sizing -----------------------
 
-unsetLayoutMode = ->
-  root.removeAttribute('theme-one-dark-ui-layoutmode')
+setTabSizing = (tabSizing) ->
+  root.setAttribute('theme-one-dark-ui-tabsizing', tabSizing.toLowerCase())
+
+unsetTabSizing = ->
+  root.removeAttribute('theme-one-dark-ui-tabsizing')
+
+
+# Dock Buttons -----------------------
+
+setHideDockButtons = (hideDockButtons) ->
+  if hideDockButtons
+    root.setAttribute('theme-one-dark-ui-dock-buttons', 'hidden')
+  else
+    unsetHideDockButtons()
+
+unsetHideDockButtons = ->
+  root.removeAttribute('theme-one-dark-ui-dock-buttons')
