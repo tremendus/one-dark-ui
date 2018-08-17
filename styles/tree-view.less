@@ -1,7 +1,7 @@
 @tree-view-height: @ui-line-height*1;
 
 .tree-view * {
-  font-size: @ui-size*0.995;
+  font-size: @ui-size*0.985;
 }
 
 .tree-view {
@@ -89,7 +89,7 @@
   z-index: 1;
   height: @ui-tab-height;
   width: 2px;
-  background: @accent-color;
+  // background: @accent-color;
   opacity: 0;
   transition: opacity .16s;
 }
@@ -119,5 +119,14 @@
 .header > .list-item {
   .icon.icon-file-directory {
     color: @syntax-text-color;
+  }
+}
+
+// hide 'project' label, top tree view
+atom-panel-container.left atom-pane-container {
+  atom-pane {
+    ul {
+      display: none;
+    }
   }
 }
