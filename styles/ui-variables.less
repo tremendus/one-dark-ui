@@ -1,5 +1,6 @@
 
 @import "ui-variables-custom.less"; // import colors and custom variables
+@import "ui-base-predawn";
 
 // ONE dark UI variables
 // ----------------------------------------------
@@ -16,17 +17,16 @@
 @text-color-highlight:  lighten(@text-color, 20%);
 @text-color-selected:   white;
 
-@text-color-info:    hsl(219,  79%, 66%);
-@text-color-success: hsl(140,  44%, 62%);
-@text-color-warning: hsl( 36,  60%, 72%);
-@text-color-error:   hsl(  9, 100%, 64%);
-
+@text-color-info:    @predawn-blue;
+@text-color-success: @predawn-green;
+@text-color-warning: @predawn-orange;
+@text-color-error:   @predawn-red;
 
 // Background -----------------
-@background-color-info:    hsl(208, 88%, 48%);
-@background-color-success: hsl(132, 58%, 40%);
-@background-color-warning: hsl( 42, 88%, 36%);
-@background-color-error:   hsl(  5, 64%, 50%);
+@background-color-info:    @predawn-blue;
+@background-color-success: @predawn-green;
+@background-color-warning: @predawn-orange;
+@background-color-error:   @predawn-red;
 
 @background-color-highlight: lighten(@base-background-color, 4%);
 @background-color-selected:  lighten(@base-background-color, 8%);
@@ -72,11 +72,11 @@
 @tree-view-background-color:       @level-3-color;
 @tree-view-border-color:           @base-border-color;
 
-@ui-site-color-1: hsl(208, 100%, 50%); // blue
-@ui-site-color-2: hsl(160,  70%, 42%); // green
-@ui-site-color-3: hsl(32,   60%, 50%); // orange
-@ui-site-color-4: #D831B0;             // pink
-@ui-site-color-5: #EBDD5B;             // yellow
+@ui-site-color-1: @predawn-blue;   // blue
+@ui-site-color-2: @predawn-green;  // green
+@ui-site-color-3: @predawn-orange; // orange
+@ui-site-color-4: @predawn-pink;   // pink
+@ui-site-color-5: @predawn-yellow; // yellow
 
 
 // Sizes -----------------
