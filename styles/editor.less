@@ -4,6 +4,8 @@
 // TODO: Find a better selector, maybe a new class like atom-text-editor[medium]
 atom-panel-container atom-text-editor.is-focused {
   .focus();
+  box-shadow: none;
+  border-color: transparent;
 }
 
 
@@ -36,9 +38,11 @@ atom-text-editor[mini] {
 
   &.is-focused {
     .focus();
-    background-color: @input-background-color-focus;
+    // background-color: @input-background-color-focus;
     .selection .region {
-      background-color: @input-selection-color-focus;
+      background-color: @level-1-color;
     }
+    box-shadow: none;
+    border-color: transparent;
   }
 }
