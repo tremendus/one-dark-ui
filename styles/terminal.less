@@ -1,15 +1,13 @@
-// todo: not done
 terminal-view {
 
   .xterm {
 
     .xterm-viewport {
-      background-color: @level-3-color;
+      background-color: @predawn-background;
     }
 
     .xterm-text-layer {
-      padding-left: .25em;
-      background-color: @level-3-color;
+      margin-left: .25em;
     }
 
   }
@@ -19,19 +17,19 @@ terminal-view {
 .terminal-view-color-elements {
 
   [data-color-key="foreground"] {
-    color: @syntax-text-color;
+    color: @predawn-white;
   }
 
   [data-color-key="background"] {
-    color: @level-3-color;
+    color: @predawn-background;
   }
 
   [data-color-key="cursor"] {
-    color: @syntax-text-color;
+    color: @predawn-white;
   }
 
   [data-color-key="cursorAccent"] {
-    color: @syntax-text-color;
+    color: @predawn-white;
   }
 
   [data-color-key="selection"] {
@@ -39,31 +37,31 @@ terminal-view {
   }
 
   [data-color-key="black"] { // 0, Black
-    color: #2e3436;
+    color: @predawn-grey-dark;
   }
 
   [data-color-key="red"] { // 1, Red
-    color: @syntax-color-variable;
+    color: @predawn-default;
   }
 
   [data-color-key="green"] { // 2, Green
-    color: @syntax-color-snippet;
+    color: @predawn-green;
   }
 
   [data-color-key="yellow"] { // 3, Yellow
-    color: @syntax-color-constant;
+    color: @predawn-yellow;
   }
 
   [data-color-key="blue"] { // 4, Blue
-    color: @syntax-color-function;
+    color: @predawn-blue;
   }
 
   [data-color-key="magenta"] { // 5, Magenta
-    color: @syntax-color-keyword;
+    color: @predawn-magenta;
   }
 
   [data-color-key="cyan"] { // 6, Cyan
-    color: @syntax-color-class;
+    color: @predawn-cyan;
   }
 
   [data-color-key="white"] { // 7, White
@@ -71,35 +69,35 @@ terminal-view {
   }
 
   [data-color-key="brightBlack"] { // 8, Bright Black
-    color: #555753;
+    color: @predawn-grey-dark;
   }
 
   [data-color-key="brightRed"] { // 9, Bright Red
-    color: @syntax-color-variable;
+    color: @predawn-default;
   }
 
   [data-color-key="brightGreen"] { // 10, Bright Green
-    color: @syntax-color-snippet;
+    color: @predawn-green;
   }
 
   [data-color-key="brightYellow"] { // 11, Bright Yellow
-    color: @syntax-color-constant;
+    color: @predawn-yellow;
   }
 
   [data-color-key="brightBlue"] { // 12, Bright Blue
-    color: @syntax-color-function;
+    color: @predawn-blue;
   }
 
   [data-color-key="brightMagenta"] { // 13, Bright Magenta
-    color: @syntax-color-keyword;
+    color: @predawn-magenta;
   }
 
   [data-color-key="brightCyan"] { // 14, Bright Cyan
-    color: @syntax-color-class;
+    color: @predawn-cyan;
   }
 
   [data-color-key="brightWhite"] { // 15, Bright White
-    color: #eeeeec;
+    color: @predawn-white;
   }
 
 }
